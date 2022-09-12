@@ -21,11 +21,9 @@ def get_artifact_id(branch):
     r = requests.get(artifacts_url, headers=headers)
     j = json.loads(r.content)
     if not r.ok:
-        print(f"::set-output name=error::{r.content}") # TODO change error
+        print(f"Faild to find artifacts. Please make sure that you have the correct tocken repo and owner")
+        exit(1)
 
-    print(f"::set-output name=error::{r.content}") # TODO change error
-    print(r.content)
-    exit(1)
     for artifact in j['artifacts']:
         if artifact["workflow_run"]["head_branch"] == branch and artifact["name"] == ARTIFACT_NAME:
             return artifact["archive_download_url"]
