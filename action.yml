@@ -1,4 +1,4 @@
-name: 'Copy Build Artifact'
+name: 'Copy Build Artifact test'
 description: 'download an artifact'
 author: 'Bettermarks GmbH'
 inputs:
