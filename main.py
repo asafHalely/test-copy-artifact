@@ -56,4 +56,5 @@ def download_artifact():
             print(f"::set-output name=success::Artifact downloaded: {ARTIFACT_NAME}")
 
 if __name__ == "__main__":
+    print("Test")
     download_artifact()
