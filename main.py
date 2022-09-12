@@ -24,6 +24,7 @@ def get_artifact_id(branch):
         print(f"::set-output name=error::{r.content}") # TODO change error
 
     print(f"::set-output name=error::{r.content}") # TODO change error
+    print("Test")
     exit(1)
     for artifact in j['artifacts']:
         if artifact["workflow_run"]["head_branch"] == branch and artifact["name"] == ARTIFACT_NAME:
@@ -56,5 +57,4 @@ def download_artifact():
             print(f"::set-output name=success::Artifact downloaded: {ARTIFACT_NAME}")
 
 if __name__ == "__main__":
-    print("Test")
     download_artifact()
